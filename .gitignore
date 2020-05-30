@@ -1,0 +1,17 @@
+# Object directory
+**/obj/
+
+# VIM swap files
+**/*.swp
+
+# vscode
+**/.vscode/
+
+# binary
+project
+
+# ext directory
+**/DRAMsim3/
+
+# shared libraries
+**/src/*.so
