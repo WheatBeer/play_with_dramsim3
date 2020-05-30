@@ -3,7 +3,7 @@ MEMORY CENTRIC SYSTEMS FOR AI(CSI6207-01) Lecture at Yonsei(20-1)
 
 
 ## Final Project Instruction
-[DRAMsim3](https://github.com/umd-memsys/DRAMsim3)is a cycle-accurate DRAM simulator, which faithfully models almost all aspects of modern DRAM, including the timings that we have covered, power consumption, etc.
+[DRAMsim3](https://github.com/umd-memsys/DRAMsim3) is a cycle-accurate DRAM simulator, which faithfully models almost all aspects of modern DRAM, including the timings that we have covered, power consumption, etc.
 
 'traces' captured from ResNet-18 training.
 
