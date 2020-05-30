@@ -1,6 +1,9 @@
 # Object directory
 **/obj/
 
+# Stats directory
+**/stats/
+
 # VIM swap files
 **/*.swp
 

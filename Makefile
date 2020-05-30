@@ -1,13 +1,12 @@
 SRCDIR=src
 OBJDIR=obj
-MAIN=$(SRCDIR)/main.cc
 
 CXX=g++
 CXXFLAGS=-g -Wall -O3 -std=c++11 -IDRAMsim3/src
 LDFLAGS=-LDRAMsim3
 LIBFLAGS=-ldramsim3
 
-SRCS=$(filter-out $(MAIN), $(wildcard $(SRCDIR)/*.cc))
+SRCS=$(wildcard $(SRCDIR)/*.cc)
 HDRS=$(wildcard $(SRCDIR)/*.h)
 OBJS=$(SRCS:$(SRCDIR)/%.cc=$(OBJDIR)/%.o)
 EXE=project
@@ -15,10 +14,10 @@ EXE=project
 .PHONY: default 
 default: directories $(EXE)
 
-$(EXE): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(LIBFLAGS) -o $@ $(MAIN) $< 
+$(EXE): $(OBJS) 
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $^ $(LIBFLAGS) 
 
-$(OBJS): $(SRCS) 
+$(OBJDIR)/%.o : $(SRCDIR)/%.cc $(HDRS)
 	$(CXX) $(CXXFLAGS) -o $@ -c $< 
 
 directories:
