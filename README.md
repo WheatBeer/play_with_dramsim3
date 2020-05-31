@@ -42,7 +42,7 @@ There are many papers (staged read: https://ieeexplore.ieee.org/abstract/documen
 - Ramulator-pim https://github.com/CMU-SAFARI/ramulator-pim
 
 ## Setup & Build & Run
-- mem_ctrler.h/.cc are based on cpu.h/.cc from DRAMsim3/src
+- mem_ctrler.h/.cc are based on cpu.h/.cc in DRAMsim3/src
 ~~~bash
 # Setup DRAMsim3 to shared library
 ./dramsim3.sh
