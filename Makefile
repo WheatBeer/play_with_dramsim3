@@ -1,9 +1,11 @@
 SRCDIR=src
 OBJDIR=obj
+EXTDIR=ext
+DRAMSIMDIR=$(EXTDIR)/DRAMsim3
 
 CXX=g++
-CXXFLAGS=-g -Wall -O3 -std=c++11 -IDRAMsim3/src
-LDFLAGS=-LDRAMsim3
+CXXFLAGS=-g -Wall -O3 -std=c++11 -I$(DRAMSIMDIR)/src
+LDFLAGS=-L$(DRAMSIMDIR)
 LIBFLAGS=-ldramsim3
 
 SRCS=$(wildcard $(SRCDIR)/*.cc)

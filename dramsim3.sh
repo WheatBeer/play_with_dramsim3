@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd ext
 # Clone DRAMsim3 master branch
 git clone https://github.com/umd-memsys/DRAMsim3.git
 cd DRAMsim3
