@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
 	string dram_cfg_path = "./ext/DRAMsim3/configs/" + dram_cfg;
 	string trace_name = "trace1.txt";	
 	string trace_path = "./traces/" + trace_name;
-	char output_dir[] = "./stat";
+	char output_dir[] = "./stats";
 	string output_dir_s(output_dir);
 	string output_prefix = "test";
 	string output_path = output_dir_s + "/" + output_prefix;
