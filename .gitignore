@@ -15,6 +15,7 @@ project
 
 # ext directory
 **/DRAMsim3/
+**/gem5/
 
 # shared libraries
 **/src/*.so
