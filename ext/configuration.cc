@@ -181,7 +181,7 @@ void Config::InitOtherParams() {
     } else {
         output_dir = output_dir + "/";
     }
-    output_prefix = output_dir + reader.Get("other", "output_prefix", "dramsim3");
+    // output_prefix = output_dir + reader.Get("other", "output_prefix", "dramsim3");
 	/* Modified End */
 
     json_stats_name = output_prefix + ".json";
