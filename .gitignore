@@ -1,25 +1,28 @@
 # Object directory
-**/obj/
+obj/
 
 # Backup
-**/bak/
+bak/
 
 # VIM swap files
-**/*.swp
+*.swp
 
-# vscode
-**/.vscode/
+# VScode
+.vscode/
 
-# binary
+# Binary
 project
 
 # ext directory
-**/DRAMsim3/
-**/gem5/
-**/gem5-dramsim3/
+DRAMsim3/
+gem5/
+gem5-dramsim3/
 
-# shared libraries
-**/src/*.so
+# Shared libraries
+*.so
 
 # Report
-**/report/
+report/
+
+# Stats
+stats/
