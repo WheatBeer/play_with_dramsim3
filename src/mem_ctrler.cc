@@ -20,44 +20,33 @@ void trace_mem_ctrler_t::tick() {
     return;
 }
 
-/* Timing Memory Controller */ 
-void timing_mem_ctrler_t::tick() {
-    mem->ClockTick();
-    if(!trace_file.eof()) {
-        if(buffer.size() < buffer_size) {
-			dramsim3::Transaction trans;
-            trace_file >> trans;
-			trace_cnt++;
-            buffer.push_back(std::make_pair(false, trans));
-		}
-	}
-	for(auto it = buffer.begin(); it != buffer.end(); ++it) {
-		if(!it->first) {
-			if(it->second.added_cycle <= clk && mem->WillAcceptTransaction(it->second.addr, it->second.is_write)) {
-				it->first = true;
-				mem->AddTransaction(it->second.addr, it->second.is_write);
-			}
-		}	
-	}
-    clk++;
-    return;
+bool timing_mem_ctrler_t::will_accept_transaction(uint64_t addr_, bool is_write_) const {
+	return mem->WillAcceptTransaction(addr_, is_write_);
+}
+
+void timing_mem_ctrler_t::add_transaction(uint64_t addr_, bool is_write_) {
+	mem->AddTransaction(addr_, is_write_);
+	mem_request_t mem_request(addr_, is_write_);
+	queue.push_back(mem_request);
+	send_cnt++;
+	return;
 }
 
 void timing_mem_ctrler_t::read_callback(uint64_t m_addr) {
-    for(auto it = buffer.cbegin(); it != buffer.cend(); ++it) {
-        if(it->second.addr == m_addr) {
+    for(auto it = queue.cbegin(); it != queue.cend(); ++it) {
+        if(it->addr == m_addr) {
 			callback_cnt++;
-            buffer.erase(it);
+            queue.erase(it);
             return;
         }
     }
 }
 
 void timing_mem_ctrler_t::write_callback(uint64_t m_addr) {
-    for(auto it = buffer.cbegin(); it != buffer.cend(); ++it) {
-        if(it->second.addr == m_addr) {
+    for(auto it = queue.cbegin(); it != queue.cend(); ++it) {
+        if(it->addr == m_addr) {
 			callback_cnt++;
-            buffer.erase(it);
+            queue.erase(it);
             return;
         }
     }
