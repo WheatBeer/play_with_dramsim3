@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
 		for(unsigned i = 0; i < num_traces; i++) {
 			if(i != 6) {
 				string trace_name = "trace" + to_string(i + 1);
-				string output_path = output_dir + "/fr_fcfs_" + trace_name;
+				string output_path = output_dir + "/fcfs_" + trace_name;
 				string trace_path = "./traces/" + trace_name + ".txt";
 				/* Trace Memory Controller Test */
 				trace_mem_ctrler_t *trace_mem_ctrler = new trace_mem_ctrler_t(dram_cfg_path, output_path, trace_path);
