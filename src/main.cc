@@ -18,11 +18,10 @@ int main(int argc, char **argv) {
 	/* Set DRAMsim3 config and trace */
 	string dram_cfg = "DDR4_8Gb_x8_2400.ini";
 	string dram_cfg_path = "./ext/DRAMsim3/configs/" + dram_cfg;
-	char output_dir_c[] = "./stats";
-	string output_dir(output_dir_c);
+	string output_dir = "./stats";
 
     /* Make 'stats' directory to save DRAMsim3 outputs */
-	if(mkdir(output_dir_c, 0776) == -1 && errno != EEXIST) { 
+	if(mkdir(output_dir.c_str(), 0776) == -1 && errno != EEXIST) { 
         std::cout << strerror(errno) << " Directory create error" << std::endl; 
     }
 	else {
