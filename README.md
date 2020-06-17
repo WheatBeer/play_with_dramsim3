@@ -1,6 +1,17 @@
 # play_with_dramsim3
 MEMORY CENTRIC SYSTEMS FOR AI(CSI6207-01) Final Project at Yonsei(20-1)
 
+## Setup & Build & Run
+- mem_ctrler.h/.cc are based on cpu.h/.cc in DRAMsim3/src
+~~~bash
+# Setup DRAMsim3 to shared library
+./dramsim3.sh
+# Build src
+make
+# Run main
+./run.sh
+~~~
+
 ## Instruction
 [DRAMsim3](https://github.com/umd-memsys/DRAMsim3) is a cycle-accurate DRAM simulator, which faithfully models almost all aspects of modern DRAM, including the timings that we have covered, power consumption, etc.
 
@@ -40,14 +51,3 @@ There are many papers (staged read: https://ieeexplore.ieee.org/abstract/documen
 - DRAMsim2 https://github.com/umd-memsys/DRAMSim2
 - Ramulator https://github.com/CMU-SAFARI/ramulator
 - Ramulator-pim https://github.com/CMU-SAFARI/ramulator-pim
-
-## Setup & Build & Run
-- mem_ctrler.h/.cc are based on cpu.h/.cc in DRAMsim3/src
-~~~bash
-# Setup DRAMsim3 to shared library
-./dramsim3.sh
-# Build src
-make
-# Run main
-./run.sh
-~~~
