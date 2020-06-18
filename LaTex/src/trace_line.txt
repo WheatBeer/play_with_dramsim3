@@ -1,0 +1,17 @@
+$ wc -l ./traces/*
+  110272 traces/trace1.txt
+   33920 traces/trace2.txt
+   77568 traces/trace3.txt
+   30976 traces/trace4.txt
+   80128 traces/trace5.txt
+   29184 traces/trace6.txt
+   55104 traces/trace7.txt
+   96000 traces/trace8.txt
+  513152 total
+
+$ grep -o READ trace1.txt | wc -w
+9920
+$ grep -o WRITE trace1.txt | wc -w
+100352
+
+$ ./dramsim3main DDR4_8Gb_x8_2400.ini -c 559529 -t trace1.txt

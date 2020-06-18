@@ -1,0 +1,10 @@
+wc -l traces/*  
+  110272 trace1.txt
+   33920 trace2.txt
+   77568 trace3.txt
+   30976 trace4.txt
+   80128 trace5.txt
+   29184 trace6.txt
+   55104 trace7.txt
+   96000 trace8.txt
+  513152 total

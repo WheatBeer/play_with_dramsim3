@@ -1,0 +1,22 @@
+ .
+ |-ext                      // ext includes DRAMsim3
+   |--configuration.cc      // for my convenience 
+   |--DRAMsim3              // DRAMsim3
+      |--libdramsim3.so     // DRAMsim3 shared library
+      |--Makefile           // DRAMsim3 Makefile
+      |--src                // DRAMsim3 source
+      |--...                // DRAMsim3 other directories and files
+ |-Makefile                 // My project Makefile
+ |-src                      // My project source
+   |--main.cc               // My project main
+   |--mem_ctrler.cc         // My project memory controller source 
+   |--mem_ctrler.h          // My project memory controller header
+ |-traces                   // ResNet-18 traces
+   |--trace1.txt
+   |--trace2.txt
+   |--trace3.txt
+   |--trace4.txt
+   |--trace5.txt
+   |--trace6.txt
+   |--trace7.txt
+   |--trace8.txt
