@@ -16,17 +16,17 @@ fi
 
 # for running
 if [[ "$#" -eq 0  ]];  then
-	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/ext/DRAMsim3
-	./$exe
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/ext/DRAMsim3
+    ./$exe
 fi
 
 # for debugging
 if [[ "$#" -eq 1  ]];  then
-	action=$1; shift
-	if [[ $action != gdb ]]; then
-		echo -e "Error: unknown action $action"
-		print_help
-	fi
-	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/ext/DRAMsim3
-	gdb $exe
+    action=$1; shift
+    if [[ $action != gdb ]]; then
+        echo -e "Error: unknown action $action"
+        print_help
+    fi
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/ext/DRAMsim3
+    gdb $exe
 fi
