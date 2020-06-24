@@ -14,16 +14,14 @@ OBJS=$(SRCS:$(SRCDIR)/%.cc=$(OBJDIR)/%.o)
 EXE=project
 
 .PHONY: default 
-default: directories $(EXE)
+default: $(EXE)
 
 $(EXE): $(OBJS) 
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $^ $(LIBFLAGS) 
 
 $(OBJDIR)/%.o : $(SRCDIR)/%.cc $(HDRS)
+	@mkdir -pv $(OBJDIR)
 	$(CXX) $(CXXFLAGS) -o $@ -c $< 
-
-directories:
-	@mkdir -p $(OBJDIR)
 
 .PHONY: clean
 clean:
